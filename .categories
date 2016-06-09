@@ -2,4 +2,5 @@ lang:arduino
 lang:java
 lang:particle
 lang:python
+lang:C
 sku:MAX44009_I2CS
