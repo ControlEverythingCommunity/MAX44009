@@ -68,7 +68,7 @@ Download (or git pull) the code in Beaglebone Black.
 
 Compile the c program.
 ```cpp
-$>gcc MAX44009.c -o MAX44009
+$>gcc MAX44009.c -o MAX44009 -lm
 ```
 Run the c program.
 ```cpp
