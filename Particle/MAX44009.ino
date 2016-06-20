@@ -12,7 +12,7 @@
 #define Addr 0x4A
 
 int exponent = 0, mantissa = 0;
-float luminance = 0.0;
+double luminance = 0.0;
 void setup()
 {
   // Set variable
@@ -58,11 +58,11 @@ void loop()
   }
 
   // Convert the data to lux
-  int exponent = (data[0] & 0xF0) >> 4;
-  int mantissa = ((data[0] & 0x0F) << 4) | (data[1] & 0x0F);
-  float luminance = pow(2, exponent) * mantissa * 0.045;
+  exponent = (data[0] & 0xF0) >> 4;
+  mantissa = ((data[0] & 0x0F) << 4) | (data[1] & 0x0F);
+  luminance = pow(2, exponent) * mantissa * 0.045;
 
   // Output data to dashboard
   Particle.publish("Ambient Light luminance :", String(luminance));
-  delay(500);
+  delay(1000);
 }
